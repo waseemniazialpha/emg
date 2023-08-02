@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1200px !important;
+}
+.big-container{
+    max-width: 1440px !important;
+}
+body{
+font-family: 'Inter', sans-serif;
+
+}
+h1,h2{
+    color: #000000;
+}
+p{
+    color: #212529;
+}
+.tracked{
+    border-radius: 24px;
+    background: linear-gradient(45deg, #468DCB 0%, #3975AA 100%);
+}
+.automotive{
+    background-image: url(/images/backlground-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+.ctv{
+    background-image: url(/images/cta-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 616px;
+
+}
