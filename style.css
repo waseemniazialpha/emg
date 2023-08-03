@@ -35,3 +35,10 @@ p{
     min-height: 616px;
 
 }
+.audio{
+    background-image: url(/images/audio-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 356px;
+
+}
