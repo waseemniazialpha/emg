@@ -30,7 +30,7 @@
             <div class="btn flex gap-8">
                 <button class="font-medium underline ">CONTACT US</button>
                 <button
-                    class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2">GET
+                    class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 hover:brightness-90 transition-all duration-700">GET
                     STARTED <img src="/images/chevron-right.png" alt=""></button>
             </div>
         </div>
@@ -41,13 +41,13 @@
     <!-- banner area  -->
 
     <div class="flex justify-center flex-col items-center mt-20 max-w-[868px] mx-auto">
-        <h1 class="text-[5rem] font-bold">Streaming advertising
+        <h1 class="text-[5rem] font-bold text-center">Streaming advertising
             that sells <span class="underline decoration-[#1E71A3]">more</span> cars<span
                 class="text-[#1E71A3]">.</span></h1>
         <p class="text-center my-8 max-w-[790px]">Maximize the impact of your advertising budget with Connected TV and Streaming Audio
             campaigns and measure the results with absolute confidence.</p>
         <button
-            class="bg-[#1E71A3] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2">Learn
+            class="bg-[#1E71A3] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 hover:brightness-90 transition-all duration-700">Learn
             More <img src="/images/chevron-right.png" alt=""></button>
     </div>
     <div class="container mx-auto mt-24">
@@ -94,20 +94,23 @@
                 <p>How do you measure the impact of your CTV and Audio advertising? We hear a lot of different answers
                     ranging from CPM and VCR to channel lineup and impression counts. </p>
                 <button
-                    class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 mt-14">GET
+                    class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 mt-14 hover:brightness-90 transition-all duration-700">GET
                     STARTED <img src="/images/chevron-right.png" alt=""></button>
             </div>
-            <div class="relative w-full">
-                <video width="100%" height="100%" controls id="videoPlayer" autoplay muted>
-                    <source src="video/Sample-MP4-Video-File-for-Testing.mp4" type="video/mp4" aut />
-                </video>
-                <div class="video-blur absolute w-full h-full top-0 left-0 rounded-3xl"></div>
-                <div class="w-full h-full absolute top-0 right-0">
-                    <div class="flex items-center w-full h-full justify-center">
-                        <img src="./images/Play Button.png" alt="" id="playButton">
-                    </div>
+            <div class="relative flex justify-center">
+                <div onmouseenter="hoverImagePause()" onmouseleave="leaveContainerVideo()" class="video-container">
+                  <video id="video-id" width="670" height="430">
+                    <source src="./video/file_example_MP4_640_3MG.mp4" type="video/ogg">
+                    Video is Loading...
+                  </video>
+                  <div class="btns">
+                    <button class="absolute w-12 h-12" onclick="togglePlayPause()">
+                      <img id="hidden-play-button" src="./images/pause-button.png" style="display: none;">
+                      <img id="play-pause-icon" src="./images/play-button.png" >
+                    </button>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
 
     </div>
@@ -121,19 +124,18 @@
         <div class="flex justify-center gap-24">
 
             <div class="text-center max-w-[280px]">
-                <h2 class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
+                <h2 id="dealershipsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
                 <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tracked Dealerships Walk-ins</p>
             </div>
             <div class="text-center max-w-[300px]">
-                <h2 class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
-                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Auto-Intender Households
-                    Reached</p>
+                <h2 id="householdsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
+                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Auto-Intender Households Reached</p>
             </div>
             <div class="text-center max-w-[280px]">
-                <h2 class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">8,000</h2>
-                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tier 2 and 3 Campaings
-                    Managed</p>
+                <h2 id="campaignsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">8,000</h2>
+                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tier 2 and 3 Campaigns Managed</p>
             </div>
+            
         </div>
     </div>
 
@@ -145,13 +147,14 @@
             <img src="/images/Rectangle 34624850.png" alt="">
             <p class="font-semibold text-[#1E71A3] text-lg">How It Works</p>
         </div>
-        <h2 class="text-[2.375rem] font-bold my-4 max-w-[800px]">EMG is making streaming advertising impactful for
+        <h2 class="text-[2.375rem] font-bold my-4 max-w-[800px] leading-[45px]">EMG is making streaming advertising impactful for
             Automotive Marketers</h2>
-        <p class="max-w-[480px] font-medium">Learn how to increase dealership walk-ins and website visits using our
+        <p class="max-w-[480px] font-medium ">Learn how to increase dealership walk-ins and website visits using our
             end-to-end solution built for the automotive industry</p>
         <button
-            class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 mt-12">GET
-            STARTED <img src="/images/chevron-right.png" alt=""></button>
+            class="bg-[#00C49C] py-4 px-10 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 mt-12 hover:brightness-90 transition-all duration-700">GET
+            STARTED <img src="/images/chevron-right.png" alt="">
+        </button>
 
 
     </div>
@@ -208,7 +211,7 @@
         <h2 class="text-[2.375rem] font-bold">Ready to Get Started?</h2>
         <p class="leading-6 my-6">Drive better performance for your streaming campaigns with our comprehensive solution.</p>
         <button
-        class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2">GET
+        class="bg-[#00C49C] py-4 px-8 text-white text-sm leading-none rounded-[0.875rem] font-bold flex items-center gap-2 hover:brightness-90 transition-all duration-700">GET
         STARTED <img src="/images/chevron-right.png" alt=""></button>
 
     </div>
@@ -273,6 +276,7 @@
         </div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 
 </html>

@@ -26,7 +26,6 @@ p{
     background-image: url(/images/backlground-img.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
 }
 .ctv{
     background-image: url(/images/cta-back.png);
@@ -41,4 +40,20 @@ p{
     background-size: cover;
     min-height: 356px;
 
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 160px;
+    width: 670px;
+    right: 10px;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.pp {
+    padding-top: 12px;
+    max-width: 800px;
 }
