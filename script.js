@@ -42,17 +42,7 @@
         }, 1000);
     }
     
-    function startCountingAnimation() {
-        const dealershipsCount = document.getElementById('dealershipsCount');
-        const householdsCount = document.getElementById('householdsCount');
-        const campaignsCount = document.getElementById('campaignsCount');
-        
-        animateCount(dealershipsCount, 50000000, 5);
-        animateCount(householdsCount, 50000000, 5);
-        animateCount(campaignsCount, 1118000, 5);
-    }
-    
-    window.addEventListener('load', startCountingAnimation);
+
 
 
 

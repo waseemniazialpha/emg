@@ -116,29 +116,60 @@
     </div>
     </div>
 
-    <!-- tracked dealership section  -->
+<!-- tracked dealership section  -->
 
-    <div class="container tracked relative mt-20 mx-auto py-20">
-        <img src="/images/vector2.png" alt="" class="absolute left-0 bottom-0 ">
-        <img src="/images/vector3.png" alt="" class="absolute right-0 bottom-0 ">
-        <div class="flex justify-center gap-24">
+<div class="container tracked relative mt-20 mx-auto py-20">
+    <img src="/images/vector2.png" alt="" class="absolute left-0 bottom-0 ">
+    <img src="/images/vector3.png" alt="" class="absolute right-0 bottom-0 ">
+    <div class="flex justify-center gap-24">
 
-            <div class="text-center max-w-[280px]">
-                <h2 id="dealershipsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
-                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tracked Dealerships Walk-ins</p>
-            </div>
-            <div class="text-center max-w-[300px]">
-                <h2 id="householdsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
-                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Auto-Intender Households Reached</p>
-            </div>
-            <div class="text-center max-w-[280px]">
-                <h2 id="campaignsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">8,000</h2>
-                <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tier 2 and 3 Campaigns Managed</p>
-            </div>
-            
+        <div class="text-center max-w-[280px]">
+            <h2 id="counter" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
+            <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tracked Dealerships Walk-ins</p>
         </div>
+        <div class="text-center max-w-[300px]">
+            <h2 id="householdsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">50,000,000</h2>
+            <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Auto-Intender Households Reached</p>
+        </div>
+        <div class="text-center max-w-[280px]">
+            <h2 id="campaignsCount" class="text-[2.625rem] font-semibold leading-loose text-[#FCFCFC]">8,000</h2>
+            <p class="leading-8 text-2xl opacity-60 text-[#FCFCFC]">Tier 2 and 3 Campaigns Managed</p>
+        </div>
+        
     </div>
+</div>
 
+<script>
+let startTime = Date.now();
+let upto = 0;
+
+function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function updated(id, targetValue) {
+    let currentTime = Date.now();
+    let elapsedTime = currentTime - startTime;
+    let targetCount = Math.floor((elapsedTime / 2000) * targetValue);
+
+    if (targetCount <= targetValue) {
+        let count = document.getElementById(id);
+        count.innerHTML = formatNumberWithCommas(targetCount);
+        upto = targetCount;
+    } else {
+        let count = document.getElementById(id);
+        count.innerHTML = formatNumberWithCommas(targetValue);
+        clearInterval(counts);
+    }
+}
+
+let counts = setInterval(function() {
+    updated("counter", 50000000);
+    updated("householdsCount", 50000000);
+    updated("campaignsCount", 8000);
+}, 10);
+
+</script>
 
     <!-- Automotive Marketers section  -->
 
