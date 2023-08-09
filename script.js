@@ -142,4 +142,58 @@
   
       faqList.appendChild(faqItem);
   });
+
   
+ 
+  document.addEventListener("DOMContentLoaded", function () {
+    function reveal() {
+        console.log("reveal function executed");
+        var reveals = document.querySelectorAll(".reveal");
+      
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+      
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+  });
+  
+
+
+//   gsap.registerPlugin(ScrollTrigger);
+
+// ScrollTrigger.defaults({
+//   toggleActions: "restart pause resume pause",
+//   scroller: ".container"
+// });
+
+// gsap.to(".orange .bb", {
+//   scrollTrigger: ".orange", 
+//   duration: 2, 
+//   rotation: 360
+// });
+
+// gsap.to(".red", {
+//   scrollTrigger: {
+//     trigger: ".red",
+//     toggleActions: "restart pause reverse pause"
+//   }, 
+//   duration: 1, 
+//   backgroundColor: "#FFA500", 
+//   ease: "none"
+// });
+
+// gsap.to(".yoyo p", {
+//   scrollTrigger: ".yoyo", 
+//   scale: 2, 
+//   repeat: -1, 
+//   yoyo: true, 
+//   ease: "power2"
+// });
